@@ -1,3 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+# Application views.
+def home(request):
+    return render(request, 'index.html')
+
+
+def register(request):
+    return render(request, 'register.html')
+
+def user_login(request):
+    return render(request, 'login.html')
+
+
+def user_logout(request):
+    return render(request, 'index.html')
