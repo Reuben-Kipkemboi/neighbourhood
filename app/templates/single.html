@@ -125,6 +125,41 @@
               </div>
         </div>
     </div>
+
+    <div class="row">
+        <h4 class="text-black text-center heading">Featured Neighbourhood Businesses</h4>
+        {% for business in businesses %}
+        <div class="card col-md-4">
+            <img src="{{business.business_image.url}}" class="card-img-top" alt="{{business.business_name}}"/>
+            <div class="card-body">
+                <p>Business Name</p>
+
+                <p class="card-title">{{business.business_name}}</p>
+                <hr>
+                <p>Business mail</p>
+              <p class="card-text">{{business.business_email_address}}</p>
+            </div>
+          </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="row pt-5">
+        <h4 class="text-black text-center heading">Featured Neighbourhood Posts, Gossips And Highlights</h4>
+        {% for post in posts %}
+        <div class="card col-md-4">
+            <img src="{{post.post_image.url}}" class="card-img-top" alt="{{business.business_name}}"/>
+            <div class="card-body">
+                <p>Highlights</p>
+                <p class="card-title">{{post.title}}</p>
+                <hr>
+              <p class="card-text">{{post.post_description}}</p>
+              <small class="float-right">{{post.posted_on}}</small>
+            </div>
+          </div>
+        {% endfor %}
+
+    </div>
 </div>
 
 

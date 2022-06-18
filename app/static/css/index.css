@@ -3,6 +3,10 @@
 * {
     font-family: 'Chakra Petch', sans-serif;
 }
+body{
+    background-color: #DFE2EC;
+
+}
 
 #profile_pic {
     height: 130px;
@@ -50,5 +54,10 @@
 }
 #more{
     font-size: 2.5vh;
+    font-weight: bold;
+}
+.heading{
+    font-size: 4vh;
+    border-bottom: 2px solid #000;
     font-weight: bold;
 }
