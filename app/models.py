@@ -18,7 +18,7 @@ class User(models.Model):
     username =models.CharField(max_length=100 , null=True)
     email_address = models.EmailField(max_length=100, null=True)
     password = models.CharField(max_length=100, null=True)
-    neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True, blank=True)
     
 
 class Profile(models.Model):

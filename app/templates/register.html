@@ -7,8 +7,8 @@
 
   <div class="row d-flex justify-content-center">
     <div class="col-md-6">
-      <form>
-        <!-- 2 column grid layout with text inputs for the first and last names -->
+      <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
@@ -16,10 +16,18 @@
               <label class="form-label" for="form3Example1">First name</label>
             </div>
           </div>
+
           <div class="col">
             <div class="form-outline">
               <input type="text" id="last_name" name="last_name" class="form-control" />
               <label class="form-label" for="form3Example2">Last name</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="username" name="username" class="form-control" />
+              <label class="form-label" for="form3Example2">Username</label>
             </div>
           </div>
         </div>

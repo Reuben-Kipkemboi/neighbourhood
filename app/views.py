@@ -20,7 +20,7 @@ def register(request):
             messages.error(request,"confirm your passwords")
             return redirect('/register')
         
-        new_user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,email_address=email_address,password=password1)
+        new_user = User.objects.create(first_name=first_name,last_name=last_name,username=username,email_address=email_address,password=password1)
         
         new_user.save()
         return render(request,'login.html')
