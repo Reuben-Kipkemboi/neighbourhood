@@ -115,3 +115,10 @@ body {
     font-weight: bold;
    /* margin-top: 100px; */
 }
+#register-page {
+    background-image: url('/static/images/register.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.6);
+}

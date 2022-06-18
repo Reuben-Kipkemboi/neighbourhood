@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="mb-5">
-  <h4 class="mb-5 text-center">
-    <strong>Sign-up with The NeighbourHood</strong>
-  </h4>
+<div class="container-fluid d-flex justify-content-center align-items-center" id="register-page">
+  <section class="mb-5">
 
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-12 card p-5 ">
+      <h4 class="mb-3 text-center">
+        <strong>Sign-up The NeighbourHood</strong>
+      </h4>
+
       <form action="{% url 'register' %}" method="POST">
 
         {% csrf_token %}
@@ -83,7 +84,8 @@
         </div>
       </form>
     </div>
-  </div>
-</section>
+
+  </section>
+</div>
 
 {% endblock content %}
