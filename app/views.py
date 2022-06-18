@@ -42,4 +42,13 @@ def user_login(request):
 
 
 def user_logout(request):
+    logout(request)
     return render(request, 'index.html')
+
+def user_profile(request):
+    users= User.objects.all()
+    current_user = request.user
+    user_posts = Post.objects.filter(user=current_user)
+    print(user_posts)
+    
+    return render (request, 'profile.html', {'users':users, 'user_posts':user_posts})

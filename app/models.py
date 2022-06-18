@@ -20,14 +20,20 @@ class User(models.Model):
     password = models.CharField(max_length=100, null=True)
     neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True, blank=True)
     
+    def __str__(self):
+        return self.first_name
+    
 
 class Profile(models.Model):
-    user_id=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
+    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     location = models.CharField(max_length=100)
     profile_pic=CloudinaryField('profile_pic')
     username =models.CharField(max_length=100 , null=True)
     about_me=models.TextField(null=True)
     neighbourhood_name=models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.user.username
     
 
 
