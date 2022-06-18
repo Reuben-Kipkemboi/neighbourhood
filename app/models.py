@@ -16,10 +16,22 @@ class Profile(models.Model):
         return self.user.username
   
 class Neighbourhood(models.Model):
-    name =models.CharField(max_length=100 , null=True)
+    name =models.CharField(max_length=50 , null=True)
     Neighbourhood_location = models.CharField(max_length=100, null=True)
     occupants_count= models.IntegerField()
     # admin_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    health_contacts = models.CharField(max_length=20, null=True, blank=True)
+    police_contacts = models.CharField(max_length=20, null=True, blank=True)
+    date_of_creation = models.DateTimeField(auto_now_add=True, null=True)
+    
+    def __str__(self):
+        return str(self.name)
+    
+    def save_neighbourhood(self):
+        self.save()
+        
+    def delete_neighbourhood(self):
+        self.delete()
     
 # class User(models.Model):
 #     first_name = models.CharField(max_length=30, null=True)
@@ -56,4 +68,5 @@ class Business(models.Model):
     business_name = models.CharField(max_length = 100)
     business_email_address = models.EmailField(max_length=100)
     user_id= models.ForeignKey(User, on_delete=models.CASCADE)
-    Neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True)
+    business_image = CloudinaryField('business_image' , null=True)
