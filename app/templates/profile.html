@@ -1,8 +1,46 @@
 {% extends "base.html" %}
 {% block title %}Profile Page{% endblock title %}
 {% block content %}
-    <div class="row my-3 p-3">
-        <h1>This is the profile page for {{user.username}}</h1>
+<div class="row my-3 p-3">
+    <h1>This is the profile page for {{user.username}}</h1>
+</div>
+
+<div class="container-fluid">
+
+    <div class="col-md-5 shadow-lg mx-auto p-4">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <img src="{{request.user.profile.profile_pic.url}}" class="rounded-circle"
+                    alt="{{request.user.username}}" id="profile_pic">
+            </div>
+            <div class="col-md-6">
+                <h5 class="ms-2 text-center">User Name:{{request.user.username}}
+
+                </h5>
+
+                <h5>Full Name: {{request.user.first_name}} {{request.user.last_name}}</h5>
+            </div>
+
+
+        </div>
+        <hr>
+        <p class="text-center">About Me</p>
+
+        <p>{{request.user.profile.about_me}}</p>
+        <hr>
+        <p class="text-center">NeighbourHood Name</p>
+
+        <p>{{request.user.profile.neighbourhood_name}}</p>
+
+        <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info btn-sm mx-auto"><i
+                    class="fa-solid fa-pen-to-square"></i>Edit profile</button></a>
+
+        <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-info btn-sm"><i
+                    class="fa-solid fa-angles-left"></i>Back Home</button></a>
+
     </div>
+
+</div>
+
 
 {% endblock content %}

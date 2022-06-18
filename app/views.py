@@ -64,7 +64,7 @@ def update_profile(request):
             return redirect(to='profile')
     else:
         form=ProfileUpdateForm(instance =request.user.profile)
-    return render(request,'update_profile.html',{'form':form})
+    return render(request,'update_profile.html', {'form':form})
 
 def user_post(request):
     if request.method=='POST':
