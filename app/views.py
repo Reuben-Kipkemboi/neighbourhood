@@ -51,13 +51,12 @@ def user_logout(request):
 def user_profile(request):
     users= User.objects.all()
     current_user = request.user
-    user_posts = Post.objects.filter(user=current_user)
+    user_posts = Post.objects.filter(person=current_user)
     print(user_posts)
     
     return render (request, 'profile.html', {'users':users, 'user_posts':user_posts})
 
 def update_profile(request):
-    
     if request.method == 'POST':
         userprofileform = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
         if  userprofileform.is_valid():
