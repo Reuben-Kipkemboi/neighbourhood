@@ -21,7 +21,7 @@
           <a class="nav-link" href="{% url 'add_post' %}">Add Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">NeighbourHoods</a>
+          <a class="nav-link" href="{% url 'hoods' %}">NeighbourHoods</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Businesses</a>
@@ -35,8 +35,12 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'business' %}"> Add Business</a></li>
+
             <li><a class="dropdown-item" href="{% url 'add_post' %}">Add Post</a></li>
+
             <li><a class="dropdown-item" href="{% url 'neighbourhood' %}">Add Neighbourhood</a></li>
+
+            <li><a class="dropdown-item" href="{% url 'hoods' %}">NeighbourHoods</a></li>
 
             <li>
               <hr class="dropdown-divider" />

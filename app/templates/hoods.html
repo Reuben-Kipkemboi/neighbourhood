@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} View NeighbourHoods {% endblock title %}
+{% block content %}
+
+<div class="container-fluid">
+    {% for hood in hoods %}
+    <div class="col-md-5 shadow-lg mx-auto p-4">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="{{hood.image.url}}" class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{hood.name}}</h5>
+            <p class="card-text">{{hood.neighbourhood_location}}</p>
+            <a href="#!" class="btn btn-primary">View Hood</a>
+        </div>
+        
+    </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock content %}

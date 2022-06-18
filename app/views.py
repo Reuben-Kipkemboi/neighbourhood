@@ -104,6 +104,10 @@ def create_hood(request):
     
     return render (request, 'hood.html', {'neighbourhood_credentials':neighbourhood_credentials})
 
+def view_hoods(request):
+    hoods=Neighbourhood.objects.all()
+    return render(request, 'hoods.html', {'hoods':hoods})
+
 
 
 def create_business(request):
@@ -123,6 +127,7 @@ def create_business(request):
         
         return redirect('home')
     return render(request, 'bus.html', {'businesses':businesses})
+
 
 
 
