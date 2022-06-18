@@ -8,7 +8,9 @@
   <div class="row d-flex justify-content-center">
     <div class="col-md-6">
       <form action="{% url 'register' %}" method="POST">
+
         {% csrf_token %}
+
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
