@@ -46,6 +46,12 @@ class Post(models.Model):
     neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
     posted_on = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return self.title
+    
+    def save_post(self):
+        self.save()
+    
     
 class Business(models.Model):
     business_name = models.CharField(max_length = 100)

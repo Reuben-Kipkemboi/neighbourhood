@@ -60,3 +60,27 @@ def user_profile(request):
     print(user_posts)
     
     return render (request, 'profile.html', {'users':users, 'user_posts':user_posts})
+
+def update_profile(request):
+    
+    if request.method == 'POST':
+        userprofileform = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
+        if  userprofileform.is_valid():
+            userprofileform.save()
+            return redirect(to='profile')
+    else:
+        form=ProfileUpdateForm(instance =request.user.profile)
+    return render(request,'update_profile.html',{'form':form})
+
+# def user_post(request):
+#     if request.method=='POST':
+#         title=request.POST.get('title')
+#         post_description=request.POST.get('description')
+#         post_image=request.FILES.get('post_image')
+        
+#         posts=Post(post_image=post_image,title=title,post_description=post_description)
+        
+#         posts.save_post()
+        
+#         return redirect('home')
+#     return render(request, 'post.html')
