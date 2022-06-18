@@ -12,7 +12,7 @@ def register(request):
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         username = request.POST['username']
-        email = request.POST['email']
+        email_address = request.POST['email']
         password1 = request.POST['password1']
         password2= request.POST['password2']
         
@@ -20,7 +20,7 @@ def register(request):
             messages.error(request,"confirm your passwords")
             return redirect('/register')
         
-        new_user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,email=email,password=password1)
+        new_user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,email_address=email_address,password=password1)
         
         new_user.save()
         return render(request,'login.html')
