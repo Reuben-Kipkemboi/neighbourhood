@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="col-md-5 mx-auto">
+<div class="container-fluid d-flex justify-content-center align-items-center" id="login-page">
+    <div class="card col-md-5 mx-auto login-card">
         <form action="" method="POST">
             {% csrf_token %}
             <!-- username input -->
@@ -25,20 +25,17 @@
                 <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
                 <p>or sign up with:</p>
                 <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f small-icons"></i>
                 </button>
 
                 <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-google"></i>
+                    <i class="fab fa-google small-icons"></i>
                 </button>
 
                 <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter small-icons"></i>
                 </button>
 
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-github"></i>
-                </button>
             </div>
         </form>
     </div>

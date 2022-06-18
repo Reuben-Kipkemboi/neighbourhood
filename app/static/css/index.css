@@ -3,7 +3,8 @@
 * {
     font-family: 'Chakra Petch', sans-serif;
 }
-body{
+
+body {
     background-color: #DFE2EC;
 
 }
@@ -27,61 +28,90 @@ body{
 .navbar-dark .navbar-nav .nav-link:focus {
     color: rgba(255, 255, 255, 0.75);
 }
-#logo{
+
+#logo {
     height: 30px;
     width: 30px;
     object-fit: cover;
 }
+
 #body {
     background-color: #f5f7fa;
-  }
-#detaile{
-    color:#000;
+}
+
+#detaile {
+    color: #000;
     font-size: 4vh;
     margin-bottom: 1%;
     font-weight: bold;
 }
-#single-image{
+
+#single-image {
 
     width: 100%;
 }
-#mask{
+
+#mask {
     background-color: rgba(251, 251, 251, 0.15);
 }
-#date{
+
+#date {
     color: #000;
     font-weight: bold;
 }
-#more{
+
+#more {
     font-size: 2.5vh;
     font-weight: bold;
 }
-.heading{
+
+.heading {
     font-size: 4vh;
     border-bottom: 2px solid #000;
     font-weight: bold;
 }
-#nav-bar{
+
+#nav-bar {
     background-color: #87AED0;
 }
-.nav-item .nav-link{
+
+.nav-item .nav-link {
     color: #fff;
 }
-#nav-link{
-    color: #000 ;
+
+#nav-link {
+    color: #000;
     font-weight: 900;
 }
-#icon{
-    color:#273257;
+
+#icon {
+    color: #273257;
 }
-#login-btn{
+
+#login-btn {
     width: 100px;
     color: #fff;
     font-weight: bold;
 }
-#register-btn{
+
+#register-btn {
     width: 100px;
     color: #273257;
     font-weight: bold;
     margin-left: 4%;
+}
+
+#login-page {
+    background-image: url('/static/images/login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.6);
+}
+
+.login-card {
+    padding: 4%;
+    color: #273257;
+    font-weight: bold;
+   /* margin-top: 100px; */
 }
