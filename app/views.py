@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import * 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
-from django.contrib.auth.hashers import check_password
 from .forms import ProfileUpdateForm
 
 
@@ -17,7 +16,7 @@ def register(request):
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         username = request.POST['username']
-        email_address = request.POST['email']
+        email = request.POST['email']
         password1 = request.POST['password1']
         password2= request.POST['password2']
         
@@ -25,7 +24,7 @@ def register(request):
             messages.error(request,"confirm your passwords")
             return redirect('/register')
         
-        new_user = User.objects.create(first_name=first_name,last_name=last_name,username=username,email_address=email_address,password=password1)
+        new_user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,email=email,password=password1)
         
         new_user.save()
         return redirect ("login") 
@@ -37,17 +36,11 @@ def user_login(request):
         username = request.POST['username']
         password = request.POST['password']  
         
-        # user = User.objects.get(username=username)
-        user = authenticate (username=username,password=password)
-        print("user is -->",user)
-        # if check_password(password, user.password):
-        #     if user.is_active:
-        #         login(request, user)
-        #         return redirect ('home')
+        user = authenticate (request,username=username,password=password)
         if user is not None:
             login(request,user)
             messages.success(request,"Welcome , you are now logged in")
-            return redirect ('home')
+            return redirect ("home")
     return render(request, 'login.html')
 
 

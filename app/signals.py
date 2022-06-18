@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 #post_save is the signal that is sent at the end of the save method.
-from .models import User
+from django.contrib.auth.models import User
 from django.dispatch import receiver
 # # importing the user profile model
 from .models import Profile
