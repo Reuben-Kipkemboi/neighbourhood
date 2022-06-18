@@ -16,16 +16,17 @@ class Profile(models.Model):
         return self.user.username
   
 class Neighbourhood(models.Model):
+    image=CloudinaryField('image', null=True)
     name =models.CharField(max_length=50 , null=True)
-    Neighbourhood_location = models.CharField(max_length=100, null=True)
+    neighbourhood_location = models.CharField(max_length=100, null=True)
     occupants_count= models.IntegerField()
-    # admin_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    admin_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     health_contacts = models.CharField(max_length=20, null=True, blank=True)
     police_contacts = models.CharField(max_length=20, null=True, blank=True)
     date_of_creation = models.DateTimeField(auto_now_add=True, null=True)
     
     def __str__(self):
-        return str(self.name)
+        return self.name
     
     def save_neighbourhood(self):
         self.save()
@@ -41,15 +42,7 @@ class Neighbourhood(models.Model):
 #     password = models.CharField(max_length=100, null=True)
 #     neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True, blank=True)
     
-    def __str__(self):
-        return self.first_name
     
-
-
-    
-
-
-
 class Post(models.Model):
     title = models.CharField(max_length=100, null=True)
     post_description = models.TextField(null=True,)
@@ -70,3 +63,7 @@ class Business(models.Model):
     user_id= models.ForeignKey(User, on_delete=models.CASCADE)
     neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True)
     business_image = CloudinaryField('business_image' , null=True)
+    
+    
+    def save_businesses(self):
+        self.save()

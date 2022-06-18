@@ -78,3 +78,51 @@ def user_post(request):
         
         return redirect('home')
     return render(request, 'post.html')
+
+
+def create_hood(request):
+    # profile = User.objects.get(username=username)
+    neighbourhood_credentials = Profile.objects.all()
+    if request.method=='POST':
+        image=request.FILES.get('image')
+        name =request.POST.get('name')
+        neighbourhood_location=request.POST.get('location')
+        occupants_count=request.POST.get('count')
+        health_contacts=request.POST.get('contact')
+        police_contacts=request.POST.get('police') 
+        
+        admin_id=request.user
+        
+        
+        neighbourhoods=Neighbourhood(image=image,name=name,neighbourhood_location=neighbourhood_location,health_contacts=health_contacts,police_contacts=police_contacts,
+        occupants_count=occupants_count,admin_id=admin_id )                      
+        
+        
+        neighbourhoods.save_neighbourhood()
+        
+        return redirect('home')
+    
+    return render (request, 'hood.html', {'neighbourhood_credentials':neighbourhood_credentials})
+
+
+
+def create_business(request):
+    
+    businesses=Business.objects.all()
+    user = request.user
+    if request.method=='POST':
+        business_name =request.POST.get('name')
+        business_email_address=request.POST.get('email')
+        business_image=request.FILES.get('image')
+        user_id=request.user
+        
+        
+        businesses=Business(business_name=business_name,business_email_address=business_email_address,business_image=business_image,user_id=user_id )
+        
+        businesses.save_businesses()
+        
+        return redirect('home')
+    return render(request, 'bus.html', {'businesses':businesses})
+
+
+

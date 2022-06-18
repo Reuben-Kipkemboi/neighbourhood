@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add NeighbourHood--
+{% endblock title %}
+
+{% block content %}
+<section class="vh-70">
+    <div class="container-fluid py-2 h-100" id="post-page">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-5">
+                <form method="POST" action="{% url 'neighbourhood' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- Image field -->
+                    <div class="mb-3 col-md-12">
+                        <label class="form-label" for="customFile">Neighbour Hood Image</label>
+                        <input type="file" class="form-control" id="image" name="image" />
+
+                    </div>
+                    <!-- Neighbour Hood input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="business_name" class="form-control" name="name"/>
+                        <label class="form-label" for="name">Neighbourhood Name</label>
+                    </div>
+
+                    <!--  Location input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="location" class="form-control" name="location"/>
+                        <label class="form-label" for="name">Neighbourhood Location</label>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="number" id="count" class="form-control" name="count" />
+                        <label class="form-label" for="title">Occupants Count</label>
+                    </div>
+
+                    <!-- Health contacts Input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="contact" class="form-control" name="contact" />
+                        <label class="form-label" for="title">Health Helpline</label>
+                    </div>
+
+                    <!-- Police helpline -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="police" class="form-control" name="police" />
+                        <label class="form-label" for="title">Police Helpline</label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Create NeighbourHood</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

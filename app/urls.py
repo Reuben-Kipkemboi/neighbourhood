@@ -16,5 +16,9 @@ urlpatterns = [
     
     path('add_post/', views.user_post, name ='add_post'),
     
+    path('add_business/', views.create_business, name ='business'),
+    
+    path('add_neighbourhood/', views.create_hood, name='neighbourhood'),
+    
     
 ]
