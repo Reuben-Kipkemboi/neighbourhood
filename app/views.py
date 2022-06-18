@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import * 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
@@ -107,6 +107,13 @@ def create_hood(request):
 def view_hoods(request):
     hoods=Neighbourhood.objects.all()
     return render(request, 'hoods.html', {'hoods':hoods})
+
+def singlehood(request, name):
+    # current_profile = request.user.profile
+    neighbourhood = get_object_or_404(Neighbourhood, name=name)
+    businesses = Business.objects.filter(neighbourhood_id = neighbourhood.id).all()
+    posts = Post.objects.filter(neighbourhood = neighbourhood.id).all()
+    return render(request, 'single.html', {'neighbourhood': neighbourhood,'businesses':businesses, 'posts':posts,})
 
 
 

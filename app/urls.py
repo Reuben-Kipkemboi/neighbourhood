@@ -22,4 +22,6 @@ urlpatterns = [
     
     path('hoods/', views.view_hoods, name ='hoods'),
     
+     path('hoods/<name>/', views.singlehood, name='single'),
+    
 ]

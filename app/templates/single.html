@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container-fluid" id="body">
+    <div class="row">
+        <div class="col-md-8">
+                <section class="my-5">
+                  <div class="card">
+                    <div class="card-body d-flex flex-row">
+                      <div>
+                        <h4 class="card-title font-weight-bold mb-1">Neighbourhood Name: {{neighbourhood.name}} </h4>
+                      </div>
+                    </div>
+                    <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                      <img class="img-fluid" src="{{neighbourhood.image.url}}"
+                        alt="Card image cap" id="single-image"/>
+                      <a href="#!">
+                        <div class="mask" id="mask"></div>
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text collapse" id="collapseContent">
+                        {{neighbourhood.describe}}
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <a class="btn btn-link link-info p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent"
+                          role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                        <div>
+                            {{neighbourhood.date_of_creation}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </section>
+        </div>
+
+        <div class="col-md-4 my-5">
+            <h5 id="detaile">Neighbourhood Details</h5>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Occupation Count
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-mdb-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                        <h5>Occupants Count</h5>
+                        <b>{{neighbourhood.occupants_count}} persons</b>
+                        
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      Health Helpline
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTwo"
+                    data-mdb-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                        HealthHelp Contacts
+                      <hr>
+                      <p></p>
+                      <b>{{neighbourhood.health_contacts}}</b>
+                      <hr>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      Police Helpline
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingThree"
+                    data-mdb-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Police Contacts
+                      <hr>
+                      <p>Muthaiga Police Station</p>
+                      <b>{{neighbourhood.police_contacts}}</b>
+                      <hr>
+                      <p>Pangani Police Station</p>
+                      <b>{{neighbourhood.police_contacts}}</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content%}

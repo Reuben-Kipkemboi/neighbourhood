@@ -1,3 +1,4 @@
+from pydoc import describe
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
@@ -17,6 +18,7 @@ class Profile(models.Model):
   
 class Neighbourhood(models.Model):
     image=CloudinaryField('image', null=True)
+    describe = models.TextField(null=True)
     name =models.CharField(max_length=50 , null=True)
     neighbourhood_location = models.CharField(max_length=100, null=True)
     occupants_count= models.IntegerField()
@@ -48,6 +50,7 @@ class Post(models.Model):
     post_description = models.TextField(null=True,)
     post_image =CloudinaryField('post_image')
     person = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True)
     posted_on = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
