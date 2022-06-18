@@ -3,4 +3,21 @@
 
 {% block content %}
 <h1>Neighbourhood</h1>
+<div class="container">
+    {% for post in posts %}
+    <div class="card col-md-5">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="{{post.post_image.url}}" class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.post_description}}</p>
+            <a href="#!" class="btn btn-primary">Button</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock content %}

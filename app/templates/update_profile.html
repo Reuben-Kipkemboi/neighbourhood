@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}update_profile {% endblock title%}
+{% block content %}
+<div class="col-md-8 mx-auto mt-5 shadow">
+
+    <h4>Profile Update</h4>
+    <div class="row">
+        <!-- <div class="col-md-3"></div> -->
+        <div class="col-md-6 update-profile mx-auto mb-3" style="background-color: #fafafa;">
+            <form action="" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-outline-info btn-sm" value="Save Profile changes">
+                <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-info btn-sm"><i class="fa-solid fa-angles-left"></i>Back Home</button></a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+

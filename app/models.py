@@ -42,8 +42,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100, null=True)
     post_description = models.TextField(null=True,)
     post_image =CloudinaryField('post_image')
-    person = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    person = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     posted_on = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
