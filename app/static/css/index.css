@@ -122,3 +122,8 @@ body {
     height: 100vh;
     background-color:rgba(0, 0, 0, 0.6);
 }
+#hood-card{
+    font-weight: bold;
+    color: #000;
+    background-color: #DFE2EC;
+}
