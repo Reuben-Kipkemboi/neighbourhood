@@ -15,7 +15,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{hood.name}}</h5>
                 <p class="card-text">{{hood.neighbourhood_location}}</p>
-                <a href="/hoods/{{hood.name}}" name="single">
+                <a href="/hoods/{{hood.id}}" name="single">
                     <button class="btn btn-primary btn-sm">View More</button>
                 </a>
                 <p class="residents">{{hood.jirani.count}} Member{{hood.jirani.count |pluralize}}</p>

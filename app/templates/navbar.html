@@ -10,12 +10,13 @@
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="me-3">
+      <form class="me-3" method="GET" action="{% url 'search' %}">
         <div class="form-white input-group" style="width: 250px;">
           <input type="search" class="form-control rounded" placeholder="Search business..."
-            aria-label="Search" aria-describedby="search-addon"  name="search"/>
+            aria-label="Search" aria-describedby="search-addon"  name="query" id="search"/>
         </div>
       </form>
+      {% if user.is_authenticated %}
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'add_post' %}" id="nav-link">Add Posts</a>
@@ -28,12 +29,15 @@
         </li>
       </ul>
       <ul class="navbar-nav d-flex flex-row ms-auto me-3">
+
+        {% else %}
         <li>
           <a href="{% url 'login' %}" class="nav-link  btn btn-info btn-rounded " id="login-btn">Login</a>
         </li>
         <li>
           <a href="{% url 'register' %}" class="nav-link  btn btn-light btn-rounded " id="register-btn">Register</a>
         </li>
+        {% endif %}
         <li class="nav-item me-3 me-lg-0 dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
             aria-expanded="false">

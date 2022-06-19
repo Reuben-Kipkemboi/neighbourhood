@@ -4,6 +4,10 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from .forms import ProfileUpdateForm
 
+#SEARCH IMPORTS
+from django.db.models import Q
+from django.views.generic import TemplateView, ListView
+
 
 # Application views.
 def home(request):
@@ -109,10 +113,11 @@ def view_hoods(request):
     hoods=Neighbourhood.objects.all()
     return render(request, 'hoods.html', {'hoods':hoods})
 
-def singlehood(request, name):
+def singlehood(request, id):
     # current_profile = request.user.profile
-    neighbourhood = get_object_or_404(Neighbourhood, name=name)
-    businesses = Business.objects.filter(neighbourhood_id = neighbourhood.id).all()
+    neighbourhood = get_object_or_404(Neighbourhood, id=id)
+    # businesses = Business.objects.filter(neighbourhood_id = neighbourhood.id).all()
+    businesses = Business.get_hood_business(id)
     posts = Post.objects.filter(neighbourhood = neighbourhood.id).all()
     return render(request, 'single.html', {'neighbourhood': neighbourhood,'businesses':businesses, 'posts':posts,})
 
@@ -153,6 +158,17 @@ def user_leave_hood(request,id):
     return redirect('hoods')
 
 
+#Search function
+class SearchResultsView(ListView):
+    model = Business
+    template_name = "search_results.html"
+    
+    def get_queryset(self):  # new
+        query = self.request.GET.get("query")
+        object_list = Business.objects.filter(
+            Q(business_name__icontains=query)
+        )
+        return object_list
 
 
 

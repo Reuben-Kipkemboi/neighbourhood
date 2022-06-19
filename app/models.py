@@ -76,3 +76,9 @@ class Business(models.Model):
     
     def save_businesses(self):
         self.save()
+        
+     
+    @classmethod
+    def get_hood_business(cls,id):
+        business = Business.objects.filter(neighbourhood_id__pk = id)
+        return business
