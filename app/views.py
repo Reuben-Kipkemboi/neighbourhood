@@ -171,4 +171,8 @@ class SearchResultsView(ListView):
         return object_list
 
 
+def all_businesses(request):
+    all=Business.objects.all()
+    return render(request, 'all.html', {'all':all})
+
 
