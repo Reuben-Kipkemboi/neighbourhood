@@ -171,7 +171,7 @@ def user_leave_hood(request,id):
 
 
 #Search function
-@login_required(login_url='/login')
+
 class SearchResultsView(ListView):
     model = Business
     template_name = "search_results.html"
