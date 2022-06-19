@@ -26,6 +26,9 @@ class Neighbourhood(models.Model):
     def delete_neighbourhood(self):
         self.delete()
         
+    def update_neighbourhood(self):
+        self.update()
+        
 #profile
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
@@ -39,9 +42,16 @@ class Profile(models.Model):
     
     def __str__(self):
         return self.user.username
-  
-
     
+    def save_Profile(self):
+        self.save()
+        
+    def delete_Profile(self):
+        self.delete()
+        
+    def update_Profile(self):
+        self.update()
+      
 # class User(models.Model):
 #     first_name = models.CharField(max_length=30, null=True)
 #     last_name = models.CharField(max_length=30, null=True)
@@ -64,18 +74,34 @@ class Post(models.Model):
     
     def save_post(self):
         self.save()
+        
+    def delete_post(self):
+        self.delete()
+        
+    def update_post(self):
+        self.update()
     
     
 class Business(models.Model):
     business_name = models.CharField(max_length = 100)
     business_email_address = models.EmailField(max_length=100)
-    user_id= models.ForeignKey(User, on_delete=models.CASCADE)
-    neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True)
+    user_id= models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True, blank=True)
     business_image = CloudinaryField('business_image' , null=True)
+    
+    def __str__(self):
+        return self.business_name
     
     
     def save_businesses(self):
         self.save()
+        
+        
+    def delete_businesses(self):
+        self.delete()
+        
+    def update_businesses(self):
+        self.update()
         
      
     @classmethod
