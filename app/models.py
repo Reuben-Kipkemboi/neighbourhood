@@ -5,23 +5,13 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-class Profile(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
-    location = models.CharField(max_length=100)
-    profile_pic=CloudinaryField('profile_pic')
-    username =models.CharField(max_length=100 , null=True)
-    about_me=models.TextField(null=True)
-    neighbourhood_name=models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.user.username
-  
+
 class Neighbourhood(models.Model):
     image=CloudinaryField('image', null=True)
     describe = models.TextField(null=True)
     name =models.CharField(max_length=50 , null=True)
     neighbourhood_location = models.CharField(max_length=100, null=True)
-    occupants_count= models.IntegerField()
+    occupants_count= models.IntegerField(default=0)
     admin_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     health_contacts = models.CharField(max_length=20, null=True, blank=True)
     police_contacts = models.CharField(max_length=20, null=True, blank=True)
@@ -35,6 +25,22 @@ class Neighbourhood(models.Model):
         
     def delete_neighbourhood(self):
         self.delete()
+        
+#profile
+class Profile(models.Model):
+    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
+    location = models.CharField(max_length=100)
+    profile_pic=CloudinaryField('profile_pic')
+    username =models.CharField(max_length=100 , null=True)
+    about_me=models.TextField(null=True)
+    # neighbourhood_name=models.CharField(max_length=100)
+    neighbour = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True, blank=True , related_name='jirani')
+    
+    
+    def __str__(self):
+        return self.user.username
+  
+
     
 # class User(models.Model):
 #     first_name = models.CharField(max_length=30, null=True)

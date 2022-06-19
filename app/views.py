@@ -81,21 +81,22 @@ def user_post(request):
 
 
 def create_hood(request):
-    # profile = User.objects.get(username=username)
     neighbourhood_credentials = Profile.objects.all()
+    # profile = Profile.objects.get(user=admin_id)
     if request.method=='POST':
         image=request.FILES.get('image')
+        describe=request.POST.get('describe')
         name =request.POST.get('name')
         neighbourhood_location=request.POST.get('location')
         occupants_count=request.POST.get('count')
         health_contacts=request.POST.get('contact')
         police_contacts=request.POST.get('police') 
         
-        admin_id=request.user
         
+        neighbourhoods=Neighbourhood(image=image,describe=describe,name=name,neighbourhood_location=neighbourhood_location,health_contacts=health_contacts,police_contacts=police_contacts,
+        occupants_count=occupants_count )
         
-        neighbourhoods=Neighbourhood(image=image,name=name,neighbourhood_location=neighbourhood_location,health_contacts=health_contacts,police_contacts=police_contacts,
-        occupants_count=occupants_count,admin_id=admin_id )                      
+        neighbourhoods.admin_id= request.user                      
         
         
         neighbourhoods.save_neighbourhood()
@@ -134,6 +135,23 @@ def create_business(request):
         
         return redirect('home')
     return render(request, 'bus.html', {'businesses':businesses})
+
+#User Join hood
+def user_join_hood(request,id):
+    neighbour = Neighbourhood.objects.get(id=id)
+    current_user =request.user
+    current_user.profile.neighbour = neighbour
+    current_user.profile.save()
+    return redirect('hoods')
+
+#user_leave
+def user_leave_hood(request,id):
+    neighbour = get_object_or_404(Neighbourhood, id=id)
+    current_user =request.user
+    current_user.profile.neighbour = None
+    current_user.profile.save()
+    return redirect('hoods')
+
 
 
 

@@ -22,6 +22,12 @@ urlpatterns = [
     
     path('hoods/', views.view_hoods, name ='hoods'),
     
-     path('hoods/<name>/', views.singlehood, name='single'),
+    path('hoods/<name>/', views.singlehood, name='single'),
+    
+    path('join/<int:id>',views.user_join_hood, name="join"),
+    
+    path('leave/<int:id>',views.user_leave_hood, name="leave"),
+     
+     
     
 ]

@@ -3,24 +3,33 @@
 {% block content %}
 
 <div class="container-fluid mt-3">
-    {% for hood in hoods %}
-    <div class="card col-md-4">
-        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="{{hood.image.url}}" class="img-fluid" />
-            <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            </a>
+    <div class="row">
+        {% for hood in hoods %}
+        <div class="card col-md-4">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="{{hood.image.url}}" class="img-fluid" />
+                <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{hood.name}}</h5>
+                <p class="card-text">{{hood.neighbourhood_location}}</p>
+                <a href="/hoods/{{hood.name}}" name="single">
+                    <button class="btn btn-primary btn-sm">View More</button>
+                </a>
+                <p class="residents">{{hood.jirani.count}} Member{{hood.jirani.count |pluralize}}</p>
+
+                {% if request.user.profile.neighbour == hood %}
+                <a href="{% url 'leave' hood.id %}" class="btn btn-sm btn-danger mt-4">Leave Hood</a>
+                {% elif not request.user.profile.neighbour %}
+                <a href="{% url 'join' hood.id %}" class="btn btn-sm btn-danger mt-4">Join Hood</a>
+                {% endif %}
+            </div>
+
         </div>
-        <div class="card-body">
-            <h5 class="card-title">{{hood.name}}</h5>
-            <p class="card-text">{{hood.neighbourhood_location}}</p>
-            <a href="/hoods/{{hood.name}}" name="single">
-                <button class="btn btn-primary btn-sm">View More</button>
-            </a>
-        </div>
-        
+        {% endfor %}
     </div>
-    {% endfor %}
 
 </div>
 
