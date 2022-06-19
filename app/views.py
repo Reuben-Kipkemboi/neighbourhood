@@ -3,6 +3,7 @@ from .models import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from .forms import ProfileUpdateForm
+from django.contrib.auth.decorators import login_required
 
 #SEARCH IMPORTS
 from django.db.models import Q
@@ -10,6 +11,7 @@ from django.views.generic import TemplateView, ListView
 
 
 # Application views.
+@login_required(login_url='/login')
 def home(request):
     posts= Post.objects.all()
     return render(request, 'index.html', {'posts':posts})
@@ -47,11 +49,13 @@ def user_login(request):
             return redirect ("home")
     return render(request, 'login.html')
 
-
+@login_required(login_url='/login')
 def user_logout(request):
     logout(request)
     return render(request, 'index.html')
 
+#user_profile
+@login_required(login_url='/login')
 def user_profile(request):
     users= User.objects.all()
     current_user = request.user
@@ -60,6 +64,8 @@ def user_profile(request):
     
     return render (request, 'profile.html', {'users':users, 'user_posts':user_posts})
 
+
+@login_required(login_url='/login')
 def update_profile(request):
     if request.method == 'POST':
         userprofileform = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
@@ -70,6 +76,8 @@ def update_profile(request):
         form=ProfileUpdateForm(instance =request.user.profile)
     return render(request,'update_profile.html', {'form':form})
 
+
+@login_required(login_url='/login')
 def user_post(request):
     if request.method=='POST':
         title=request.POST.get('title')
@@ -83,7 +91,7 @@ def user_post(request):
         return redirect('home')
     return render(request, 'post.html')
 
-
+@login_required(login_url='/login')
 def create_hood(request):
     neighbourhood_credentials = Profile.objects.all()
     # profile = Profile.objects.get(user=admin_id)
@@ -109,6 +117,8 @@ def create_hood(request):
     
     return render (request, 'hood.html', {'neighbourhood_credentials':neighbourhood_credentials})
 
+
+@login_required(login_url='/login')
 def view_hoods(request):
     hoods=Neighbourhood.objects.all()
     return render(request, 'hoods.html', {'hoods':hoods})
@@ -122,7 +132,7 @@ def singlehood(request, id):
     return render(request, 'single.html', {'neighbourhood': neighbourhood,'businesses':businesses, 'posts':posts,})
 
 
-
+@login_required(login_url='/login')
 def create_business(request):
     
     businesses=Business.objects.all()
@@ -142,6 +152,7 @@ def create_business(request):
     return render(request, 'bus.html', {'businesses':businesses})
 
 #User Join hood
+@login_required(login_url='/login')
 def user_join_hood(request,id):
     neighbour = Neighbourhood.objects.get(id=id)
     current_user =request.user
@@ -150,6 +161,7 @@ def user_join_hood(request,id):
     return redirect('hoods')
 
 #user_leave
+@login_required(login_url='/login')
 def user_leave_hood(request,id):
     neighbour = get_object_or_404(Neighbourhood, id=id)
     current_user =request.user
@@ -159,6 +171,7 @@ def user_leave_hood(request,id):
 
 
 #Search function
+@login_required(login_url='/login')
 class SearchResultsView(ListView):
     model = Business
     template_name = "search_results.html"
@@ -170,7 +183,7 @@ class SearchResultsView(ListView):
         )
         return object_list
 
-
+@login_required(login_url='/login')
 def all_businesses(request):
     all=Business.objects.all()
     return render(request, 'all.html', {'all':all})
