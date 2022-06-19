@@ -40,6 +40,12 @@ Login
 ![Login](./app/static/images/login.png)
 
 
+Home Module
+
+![News Highlights](./app/static/images/home.png)
+
+
+
 Create a Neighbourhood
 
 ![business](./app/static/images/create.png)
@@ -129,7 +135,7 @@ Open the application on your browser `127.0.0.1:8000`.
 
 ## Live Site
 
-#### 
+#### https://linda-jirani.herokuapp.com/
 
 
 ## Author's Info
