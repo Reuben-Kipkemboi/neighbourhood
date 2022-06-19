@@ -39,18 +39,15 @@ Login
 
 ![Login](./app/static/images/login.png)
 
-Post News alerts
 
-![Welcome](./app/static/images/create.png)
+Create a Neighbourhood
 
-Create a business
-
-![Welcome](./app/static/images/rate.png)
+![business](./app/static/images/create.png)
 
 
-News Alerts
+Create New Business in your Neighbourhood
 
-![create post ](./app/static/images/api.png)
+![create Business ](./app/static/images/api.png)
 
 
 ## Behaviour Driven Development
