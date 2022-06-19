@@ -75,3 +75,8 @@ class NeighborhoodTestClass(TestCase):
         self.new_hood.delete_neighbourhood()
         test_neighbourhoods = Neighbourhood.objects.all()
         self.assertFalse(len(test_neighbourhoods) > 0)
+         
+    def test_update_neighbourhood_method(self):
+        self.new_hood.save()
+        test_neighbourhoods = Neighbourhood.objects.all()
+        self.assertTrue(len(test_neighbourhoods) > 0)

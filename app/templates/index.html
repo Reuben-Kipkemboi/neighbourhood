@@ -2,21 +2,22 @@
 {% load static %}
 
 {% block content %}
-<h1>Neighbourhood</h1>
+<h4 class="text-center mt-3 mb-3 text-black">Top Trends & News Alerts </h4>
 <div class="container-fluid p-3">
-    <div class="row">
+    <div class="row" id="news">
         {% for post in posts %}
-        <div class="card col-md-4 me-2">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="{{post.post_image.url}}" class="img-fluid" />
-                <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{post.title}}</h5>
-                <p class="card-text">{{post.post_description}}</p>
-                <a href="#!" class="btn btn-primary">Button</a>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="{{post.post_image.url}}" class="img-fluid" id="contain" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.post_description}}</p>
+                </div>
             </div>
         </div>
         {% endfor %}
