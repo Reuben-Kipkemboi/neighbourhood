@@ -27,17 +27,17 @@
         <p class="text-center">About Me</p>
 
         <p>{{request.user.profile.about_me}}</p>
-        
+
         <p class="text-center">Location</p>
 
         <p>{{request.user.profile.location}}</p>
         <p class="text-center">
-        <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info btn-sm mx-auto"><i
-                    class="fa-solid fa-pen-to-square"></i>Edit profile</button></a>
+            <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info btn-sm mx-auto"><i
+                        class="fa-solid fa-pen-to-square"></i>Edit profile</button></a>
 
-        <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-info btn-sm"><i
-                    class="fa-solid fa-angles-left"></i>Back Home</button></a>
-                </p>
+            <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-info btn-sm"><i
+                        class="fa-solid fa-angles-left"></i>Back Home</button></a>
+        </p>
 
     </div>
 

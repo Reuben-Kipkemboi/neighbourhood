@@ -63,7 +63,8 @@ Create New Business in your Neighbourhood
 | Registration| **Registration page** | The registration page has a register form for new users  to register to the application and are redirected to login |
 | Button click | **View More click** | Upon clicking neighbourhoods navigation User can see a the available homesteads and on click of `view more` button user can see the details of a single  neighbourhood|
 | Button click | **Join or Leave button** | one can decide to join a neighbourhood and also leave the neighbourhood.To leave you click on leave button and to join Join button.One can only be a member of one neighbourhood at a time|
-| Profile Icon | **Profile Icon click** | User gets option to view profile, update profile and logout.On view profile user can view and also edit his or her own problem.The logout button basically ends the users session|
+| Profile Icon | **Profile Icon click** | User gets option to view profile, update profile and logout.On view profile user can view and also edit his or her own profile.The logout button basically ends the users session|
+| Forms | **Form filling** | User gets to fill in various forms, and depending on various tasks the form are meant for, upon submission the act is done e.g for profile update on form submission users profile is updated|
 
 
 ## Installation Requirements
@@ -140,7 +141,7 @@ Open the application on your browser `127.0.0.1:8000`.
 
 ## Author's Info
 
-* :email: [Reuben Kipkemboi](https://gmail.com)  
+ :email: [Reuben Kipkemboi](https://gmail.com)  
 
 <p align = "center">
     &copy; 2022 @Reuben Kipkemboi.
