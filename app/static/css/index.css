@@ -127,4 +127,11 @@ body {
     color: #000;
     background-color: #DFE2EC;
 }
+#centering{
+    font-size: 4vh;
+    font-weight: bold;
+    color:#000;
+    border-bottom: 1px solid #273257;
+    
 
+}

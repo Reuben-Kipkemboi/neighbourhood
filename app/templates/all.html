@@ -3,20 +3,23 @@
 {% block content %}
 
 <div class="container-fluid mt-3">
-    <div class="row">
-        {% for single in all%}
-        <div class="card col-md-3 m-3">
-            <img src="{{single.business_image.url}}" class="card-img-top" alt="{{single.business_name}}"/>
-            <div class="card-body">
-              <p class="card-text">{{single.business_name}}.</p>
-              <hr>
-              <small>{{single.business_email_address}}</small>
-            </div>
-          </div>
-        {% endfor %}
+  <p class="text-center" id="centering">Featured Businesses</p>
+  <div class="row">
+    {% for single in all%}
+    <div class="col-md-4">
+      <div class="card m-3">
+        <img src="{{single.business_image.url}}" class="card-img-top" alt="{{single.business_name}}" />
+        <div class="card-body">
+          <p class="card-text">{{single.business_name}}.</p>
+          <hr>
+          <small>{{single.business_email_address}}</small>
+        </div>
+      </div>
     </div>
-    
-    
+    {% endfor %}
+  </div>
+
+
 
 </div>
 
