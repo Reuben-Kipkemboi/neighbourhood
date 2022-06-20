@@ -1,167 +1,140 @@
 {% extends 'base.html' %}
 {% block content%}
 <div class="container-fluid" id="body">
-    <div class="row">
-        <div class="col-md-8">
-                <section class="my-5">
-                  <div class="card">
-                    <div class="card-body d-flex flex-row">
-                      <div>
-                        <h4 class="card-title font-weight-bold mb-1">Neighbourhood Name: {{neighbourhood.name}} </h4>
-                      </div>
-                    </div>
-                    <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
-                      <img class="img-fluid" src="{{neighbourhood.image.url}}"
-                        alt="Card image cap" id="single-image"/>
-                      <a href="#!">
-                        <div class="mask" id="mask"></div>
-                      </a>
-                    </div>
-                    <div class="card-body">
-                      <p class="card-text collapse" id="collapseContent">
-                        {{neighbourhood.describe}}
-                      </p>
-                      <div class="d-flex justify-content-between">
-                        <a class="btn btn-link link-info p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent"
-                          role="button" aria-expanded="false" aria-controls="collapseContent" id="more">Read more</a>
-                        <div id="date">
-                            {{neighbourhood.date_of_creation}}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </section>
-        </div>
-
-        <div class="col-md-4 my-5">
-            <h5 id="detaile">Neighbourhood Details</h5>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-mdb-toggle="collapse"
-                      data-mdb-target="#flush-collapseOne"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      Occupation Count
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne"
-                    data-mdb-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                        <h5>Occupants Count</h5>
-                        <b>{{neighbourhood.occupants_count}} persons</b>
-                        
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-mdb-toggle="collapse"
-                      data-mdb-target="#flush-collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseTwo"
-                    >
-                      Health Helpline
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingTwo"
-                    data-mdb-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                        HealthHelp Contacts
-                      <hr>
-                      <p></p>
-                      <b>{{neighbourhood.health_contacts}}</b>
-                      <hr>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-mdb-toggle="collapse"
-                      data-mdb-target="#flush-collapseThree"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseThree"
-                    >
-                      Police Helpline
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingThree"
-                    data-mdb-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Police Contacts
-                      <hr>
-                      <p>Nearest Police Station</p>
-                      <b>{{neighbourhood.police_contacts}}</b>
-                      <hr>
-                      <p>Nearest Police Helpline</p>
-                      <b>{{neighbourhood.police_contacts}}</b>
-                    </div>
-                  </div>
-                </div>
+  <div class="row">
+    <div class="col-md-8">
+      <section class="my-5">
+        <div class="card">
+          <div class="card-body d-flex flex-row">
+            <div>
+              <h4 class="card-title font-weight-bold mb-1">Neighbourhood Name: {{neighbourhood.name}} </h4>
+            </div>
+          </div>
+          <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+            <img class="img-fluid" src="{{neighbourhood.image.url}}" alt="Card image cap" id="single-image" />
+            <a href="#!">
+              <div class="mask" id="mask"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <p class="card-text collapse" id="collapseContent">
+              {{neighbourhood.describe}}
+            </p>
+            <div class="d-flex justify-content-between">
+              <a class="btn btn-link link-info p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent"
+                role="button" aria-expanded="false" aria-controls="collapseContent" id="more">Read more</a>
+              <div id="date">
+                {{neighbourhood.date_of_creation}}
               </div>
-              <a href="{% url 'business' neighbourhood.id %}" class="btn btn-outline-primary">Create Business</a>
+            </div>
+          </div>
         </div>
 
+      </section>
     </div>
 
-    <div class="row">
-        <h4 class="text-black text-center heading">Featured Neighbourhood Businesses</h4>
-        {% for business in businesses %}
-        <div class="card col-md-4">
-            <img src="{{business.business_image.url}}" class="card-img-top" alt="{{business.business_name}}"/>
-            <div class="card-body">
-                <p>Business Name</p>
+    <div class="col-md-4 my-5">
+      <h5 id="detaile">Neighbourhood Details</h5>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Occupation Count
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+            data-mdb-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <h5>Occupants Count</h5>
+              <b>{{neighbourhood.occupants_count}} persons</b>
 
-                <p class="card-title">{{business.business_name}}</p>
-                <hr>
-                <p>Business mail</p>
-              <p class="card-text">{{business.business_email_address}}</p>
             </div>
           </div>
-        {% endfor %}
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Health Helpline
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+            data-mdb-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              HealthHelp Contacts
+              <hr>
+              <p></p>
+              <b>{{neighbourhood.health_contacts}}</b>
+              <hr>
 
-    </div>
-
-    <div class="row pt-5">
-        <h4 class="text-black text-center heading">Featured Neighbourhood Posts, Gossips And Highlights</h4>
-        {% for post in posts %}
-        <div class="card col-md-4">
-            <img src="{{post.post_image.url}}" class="card-img-top" alt="{{business.business_name}}"/>
-            <div class="card-body">
-                <p>Highlights</p>
-                <p class="card-title">{{post.title}}</p>
-                <hr>
-              <p class="card-text">{{post.post_description}}</p>
-              <small class="float-right">{{post.posted_on}}</small>
             </div>
           </div>
-        {% endfor %}
-
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Police Helpline
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-mdb-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              Police Contacts
+              <hr>
+              <p>Nearest Police Station</p>
+              <b>{{neighbourhood.police_contacts}}</b>
+              <hr>
+              <p>Nearest Police Helpline</p>
+              <b>{{neighbourhood.police_contacts}}</b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'business' neighbourhood.id %}" class="btn btn-outline-primary">Create Business</a>
     </div>
+
+  </div>
+
+  <div class="row">
+    <h4 class="text-black text-center heading">Featured Neighbourhood Businesses</h4>
+    {% for business in businesses %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{business.business_image.url}}" class="card-img-top" alt="{{business.business_name}}" />
+        <div class="card-body">
+          <p>Business Name</p>
+
+          <p class="card-title">{{business.business_name}}</p>
+          <hr>
+          <p>Business mail</p>
+          <p class="card-text">{{business.business_email_address}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <div class="row pt-5">
+    <h4 class="text-black text-center heading">Featured Neighbourhood Posts, Gossips And Highlights</h4>
+    {% for post in posts %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{post.post_image.url}}" class="card-img-top" alt="{{business.business_name}}" />
+        <div class="card-body">
+          <p>Highlights</p>
+          <p class="card-title">{{post.title}}</p>
+          <hr>
+          <p class="card-text">{{post.post_description}}</p>
+          <small class="float-right">{{post.posted_on}}</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
 </div>
 
 
