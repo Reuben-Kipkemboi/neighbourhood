@@ -123,17 +123,18 @@ def view_hoods(request):
     hoods=Neighbourhood.objects.all()
     return render(request, 'hoods.html', {'hoods':hoods})
 
-def singlehood(request, id):
+def singlehood(request, neighbourhood_id):
     # current_profile = request.user.profile
-    neighbourhood = get_object_or_404(Neighbourhood, id=id)
+    neighbourhood = get_object_or_404(Neighbourhood, id=neighbourhood_id)
     # businesses = Business.objects.filter(neighbourhood_id = neighbourhood.id).all()
-    businesses = Business.get_hood_business(id)
+    businesses = Business.get_hood_business(neighbourhood_id)
     posts = Post.objects.filter(neighbourhood = neighbourhood.id).all()
+    
     return render(request, 'single.html', {'neighbourhood': neighbourhood,'businesses':businesses, 'posts':posts,})
 
 
 @login_required(login_url='/login')
-def create_business(request):
+def create_business(request, neighbourhood_id):
     
     businesses=Business.objects.all()
     user = request.user
@@ -144,11 +145,11 @@ def create_business(request):
         user_id=request.user
         
         
-        businesses=Business(business_name=business_name,business_email_address=business_email_address,business_image=business_image,user_id=user_id )
+        businesses=Business(business_name=business_name,business_email_address=business_email_address,business_image=business_image,user_id=user_id,neighbourhood_id=Neighbourhood.objects.get(id=neighbourhood_id ))
         
         businesses.save_businesses()
         
-        return redirect('home')
+        return redirect('single',neighbourhood_id )
     return render(request, 'bus.html', {'businesses':businesses})
 
 #User Join hood

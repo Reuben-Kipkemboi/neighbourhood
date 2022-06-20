@@ -17,13 +17,13 @@ urlpatterns = [
     
     path('add_post/', views.user_post, name ='add_post'),
     
-    path('add_business/', views.create_business, name ='business'),
+    path('add_business/<int:neighbourhood_id>', views.create_business, name ='business'),
     
     path('add_neighbourhood/', views.create_hood, name='neighbourhood'),
     
     path('hoods/', views.view_hoods, name ='hoods'),
     
-    path('hoods/<int:id>/', views.singlehood, name='single'),
+    path('hoods/<int:neighbourhood_id>/', views.singlehood, name='single'),
     
     path('join/<int:id>',views.user_join_hood, name="join"),
     
