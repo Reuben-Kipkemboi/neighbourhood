@@ -124,9 +124,7 @@ def view_hoods(request):
     return render(request, 'hoods.html', {'hoods':hoods})
 
 def singlehood(request, neighbourhood_id):
-    # current_profile = request.user.profile
     neighbourhood = get_object_or_404(Neighbourhood, id=neighbourhood_id)
-    # businesses = Business.objects.filter(neighbourhood_id = neighbourhood.id).all()
     businesses = Business.get_hood_business(neighbourhood_id)
     posts = Post.objects.filter(neighbourhood = neighbourhood.id).all()
     
