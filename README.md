@@ -58,7 +58,7 @@ Create New Business in your Neighbourhood
 
 ## Behaviour Driven Development
 | Behaviour | Input | Output |
-| :---------------- | :---------------: | ------------------: |
+| ---------------- | --------------- | ------------------ |
 | Application starts | **On page load** | Login page for user to login |
 | Registration| **Registration page** | The registration page has a register form for new users  to register to the application and are redirected to login |
 | Button click | **View More click** | Upon clicking neighbourhoods navigation User can see a the available homesteads and on click of `view more` button user can see the details of a single  neighbourhood|
