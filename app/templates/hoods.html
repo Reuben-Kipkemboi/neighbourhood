@@ -19,12 +19,12 @@
                     <a href="/hoods/{{hood.id}}" name="single">
                         <button class="btn btn-primary btn-sm">View More</button>
                     </a>
-                    <p class="residents">{{hood.jirani.count}} Member{{hood.jirani.count |pluralize}}</p>
+                    <p class="residents">{{hood.jirani.count}} Occupant{{hood.jirani.count |pluralize}}</p>
 
                     {% if request.user.profile.neighbour == hood %}
-                    <a href="{% url 'leave' hood.id %}" class="btn btn-sm btn-danger mt-4">Leave Hood</a>
+                    <a href="{% url 'leave' hood.id %}" class="btn btn-sm btn-primary mt-1">Leave Hood</a>
                     {% elif not request.user.profile.neighbourhood %}
-                    <a href="{% url 'join' hood.id %}" class="btn btn-sm btn-danger mt-4">Join Hood</a>
+                    <a href="{% url 'join' hood.id %}" class="btn btn-sm btn-info mt-1">Join Hood</a>
                     {% endif %}
                 </div>
 
