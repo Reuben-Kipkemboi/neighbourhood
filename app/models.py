@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 
-# Create your models here.
+# models here.
 
 class Neighbourhood(models.Model):
     image=CloudinaryField('image', null=True)
@@ -36,7 +36,6 @@ class Profile(models.Model):
     profile_pic=CloudinaryField('profile_pic')
     username =models.CharField(max_length=100 , null=True)
     about_me=models.TextField(null=True)
-    # neighbourhood_name=models.CharField(max_length=100)
     neighbour = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True, blank=True , related_name='jirani')
     
     
@@ -51,14 +50,7 @@ class Profile(models.Model):
         
     def update_Profile(self):
         self.update()
-      
-# class User(models.Model):
-#     first_name = models.CharField(max_length=30, null=True)
-#     last_name = models.CharField(max_length=30, null=True)
-#     username =models.CharField(max_length=100 , null=True)
-#     email_address = models.EmailField(max_length=100, null=True)
-#     password = models.CharField(max_length=100, null=True)
-#     neighbourhood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True, blank=True)
+    
     
     
 class Post(models.Model):
