@@ -3,10 +3,24 @@
 * {
     font-family: 'Chakra Petch', sans-serif;
 }
+#top-heading{
+    font-size: 4vh;
+    font-weight: bolder;
+    padding-bottom: 3px;
+
+}
 
 body {
     background-color: #DFE2EC;
 
+}
+#title-card{
+    font-weight: bold;
+    font-size: 2.8vh;
+    color: #273257;
+}
+#description-post{
+    font-size: 1.5vh;
 }
 
 #profile_pic {
