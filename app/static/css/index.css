@@ -22,6 +22,11 @@ body {
 #description-post{
     font-size: 1.5vh;
 }
+#contain{
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
 
 #profile_pic {
     height: 130px;
