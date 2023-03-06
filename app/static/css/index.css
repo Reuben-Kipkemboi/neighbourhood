@@ -101,6 +101,10 @@ body {
 #nav-link {
     color: #000;
     font-weight: 900;
+    font-size: 2vh;
+}
+#new-color{
+    color:#364082;
 }
 
 #icon {
