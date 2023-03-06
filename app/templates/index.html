@@ -7,7 +7,7 @@
     <div class="row" id="news">
         {% for post in posts %}
         <div class="col-md-4">
-            <div class="card mb-3">
+            <div class="card mb-3" id="news-card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                     <img src="{{post.post_image.url}}" class="img-fluid" id="contain" />
                     <a href="#!">
