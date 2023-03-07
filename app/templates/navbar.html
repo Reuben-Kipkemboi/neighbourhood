@@ -18,13 +18,13 @@
       {% if user.is_authenticated %}
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'add_post' %}" id="nav-link">Add <span id="new-color">Post</span></a>
+          <a class="nav-link" href="{% url 'add_post' %}" id="nav-link">Add Post <i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'hoods' %}" id="nav-link">NeighbourHoods</a>
+          <a class="nav-link" href="{% url 'hoods' %}" id="nav-link">NeighbourHoods <i class="fa-solid fa-house"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'all' %}" id="nav-link">Businesses</a>
+          <a class="nav-link" href="{% url 'all' %}" id="nav-link">Businesses <i class="fa-solid fa-cash-register"></i></a>
         </li>
       </ul>
       <ul class="navbar-nav d-flex flex-row ms-auto me-3">
