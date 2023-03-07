@@ -270,5 +270,13 @@ body {
 }
 #count-count{
     font-weight: bold;
+    font-size: 2vh;
+    color: #273257;
+}
+#count-button{
+    color: #273257;
+    font-size: 2vh;
+}
+.persons-in{
     font-size: 1.8vh;
 }
