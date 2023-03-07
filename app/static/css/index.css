@@ -280,3 +280,9 @@ body {
 .persons-in{
     font-size: 1.8vh;
 }
+.business-btn-create{
+    background-color: #88b0ce;
+    color: #fff;
+    font-size: 1.5vh;
+    font-weight: bold;
+}
