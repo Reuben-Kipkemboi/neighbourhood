@@ -66,11 +66,9 @@
 
       {% else %}
 
-      <a href="{% url 'login' %}" class="nav-link  btn btn-info btn-rounded " id="login-btn">Login</a>
-
-
-      <a href="{% url 'register' %}" class="nav-link  btn btn-light btn-rounded " id="register-btn">Register</a>
-
+      <a href="{% url 'login' %}" class="nav-link btn btn-primary btn-rounded  px-4 py-2" id="logs">Login</a>
+    
+      <a href="{% url 'register' %}" class="nav-link  btn btn-secondary btn-rounded px-4 py-2" id="register-btn">Register</a>
       {% endif %}
 
     </div>
