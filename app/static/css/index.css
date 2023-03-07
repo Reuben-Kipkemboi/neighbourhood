@@ -357,3 +357,15 @@ body {
     font-weight: 900;
     font-size: 2vh;
 }
+#edit-profile, #back-home{
+    color: #273257;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.7vh;
+    outline: 2px solid #273257;
+
+}
+#edit-profile:hover, #back-home:hover{
+    color: #fff;
+    background-color: #273257;
+}
