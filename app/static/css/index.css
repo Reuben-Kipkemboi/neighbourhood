@@ -310,4 +310,11 @@ body {
 .bus-name:hover, .mail:hover{
     text-decoration: underline dotted #273257;
     cursor: pointer;
+    font-style: italic;
+}
+/* featured businesses styles */
+.all-businesses{
+    font-size: 2vh;
+    color: #273257;
+    font-weight: 900;
 }
