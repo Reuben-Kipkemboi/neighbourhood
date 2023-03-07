@@ -14,17 +14,17 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{hood.name}}</h5>
-                    <p class="card-text">{{hood.neighbourhood_location}}</p>
+                    <h5 class="card-title" id="hood-name">{{hood.name}}</h5>
+                    <p class="card-text" id="hood-loc">{{hood.neighbourhood_location}}</p>
                     <a href="/hoods/{{hood.id}}" name="single">
-                        <button class="btn btn-primary btn-sm">View More</button>
+                        <button class="btn btn-primary btn-lg" id="view-moore">View More</button>
                     </a>
                     <p class="residents">{{hood.jirani.count}} Occupant{{hood.jirani.count |pluralize}}</p>
 
                     {% if request.user.profile.neighbour == hood %}
-                    <a href="{% url 'leave' hood.id %}" class="btn btn-sm btn-outline-primary mt-1">Leave NeighbourHood</a>
+                    <a href="{% url 'leave' hood.id %}" class="btn btn-sm btn-outline-primary mt-1" id="leave-join">Leave NeighbourHood</a>
                     {% elif not request.user.profile.neighbourhood %}
-                    <a href="{% url 'join' hood.id %}" class="btn btn-sm btn-outline-info mt-1">Join NeighbourHood</a>
+                    <a href="{% url 'join' hood.id %}" class="btn btn-outline-info mt-2" id="leave-join">Join NeighbourHood</a>
                     {% endif %}
                 </div>
 

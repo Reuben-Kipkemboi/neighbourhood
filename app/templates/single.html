@@ -7,7 +7,7 @@
         <div class="card">
           <div class="card-body d-flex flex-row">
             <div>
-              <h4 class="card-title font-weight-bold mb-1">Neighbourhood Name: {{neighbourhood.name}} </h4>
+              <h4 class="card-title mb-1" id="name-neighbourhood">Neighbourhood: {{neighbourhood.name}} </h4>
             </div>
           </div>
           <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
@@ -46,7 +46,7 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
             data-mdb-parent="#accordionFlushExample">
             <div class="accordion-body">
-              <h5>Occupants Count</h5>
+              <h5 id="count-count">Occupants Count</h5>
               <b>{{neighbourhood.occupants_count}} persons</b>
 
             </div>
