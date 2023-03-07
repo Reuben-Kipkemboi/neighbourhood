@@ -168,7 +168,7 @@ body {
 }
 
 #search {
-    font-size: 1.8vh;
+    font-size: 2.0vh;
     color: #364082;
     font-weight: bold;
 }
@@ -317,4 +317,43 @@ body {
     font-size: 2vh;
     color: #273257;
     font-weight: 900;
+}
+
+/* navbar styling */
+#nav-link:hover{
+    border-right: 1px solid #fff ;
+    border-left: 1px solid #fff ;
+
+}
+
+/* profile styles */
+.location_profile{
+    font-size: 2vh;
+    font-weight: bold;
+    color: #273257;
+
+}
+.underline{
+
+}
+.about{
+    font-size: 2vh;
+    font-weight: 900;
+    color: #273257;
+
+}
+.about-next, .loc-profile{
+    font-size: 1.5vh;
+    font-weight: 900;
+    color: #273257;
+
+}
+.about-next:hover, .loc-profile:hover{
+    text-decoration: underline;
+    transition: 1s;
+}
+.under-line{
+    color: #273257;
+    font-weight: 900;
+    font-size: 2vh;
 }

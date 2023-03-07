@@ -14,25 +14,25 @@
                     alt="{{request.user.username}}" id="profile_pic">
             </div>
             <div class="col-md-6">
-                <h5 class="ms-2 text-center">User Name:{{request.user.username}}
+                <h5 class="ms-2 under-line">USER NAME:{{request.user.username}}
 
                 </h5>
 
-                <h5>Full Name: {{request.user.first_name}} {{request.user.last_name}}</h5>
+                <h5 class="under-line">Full Name: {{request.user.first_name}} {{request.user.last_name}}</h5>
             </div>
 
 
         </div>
         <hr>
-        <p class="text-center">About Me</p>
+        <p class="about">About Me</p>
 
-        <p>{{request.user.profile.about_me}}</p>
+        <p class="about-next">{{request.user.profile.about_me}}</p>
 
-        <p class="text-center">Location</p>
+        <p class="location_profile">Location</p>
 
-        <p>{{request.user.profile.location}}</p>
+        <p class="loc-profile">{{request.user.profile.location}}</p>
         <p class="text-center">
-            <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info btn-sm mx-auto"><i
+            <a href="{% url 'update' %}"><button type="button" class="btn btn-outline-info mx-auto"><i
                         class="fa-solid fa-pen-to-square"></i>Edit profile</button></a>
 
             <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-info btn-sm"><i
