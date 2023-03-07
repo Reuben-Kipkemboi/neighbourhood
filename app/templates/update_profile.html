@@ -5,7 +5,7 @@
 {% block content %}
 <div class="col-md-8 mx-auto mt-5 shadow">
 
-    <h4>Profile Update</h4>
+    <h4 class="title-one">Hello {{user.username}}, Update your profile</h4>
     <div class="row">
         <!-- <div class="col-md-3"></div> -->
         <div class="col-md-6 update-profile mx-auto mb-3 p-2" >
@@ -13,8 +13,8 @@
                 {%csrf_token%}
 
                 {% bootstrap_form form %}
-                <input type="submit" class="btn btn-outline-info btn-sm" value="Save Profile changes">
-                <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-info btn-sm"><i
+                <input type="submit" class="btn" value="Save Profile changes" id="update-btn">
+                <a href="{% url 'home' %}"><button type="button" class="btn" id="go-back-btn"><i
                             class="fa-solid fa-angles-left"></i>Back Home</button></a>
             </form>
         </div>
