@@ -7,34 +7,37 @@
             <!-- username input -->
             <div class="form-outline mb-4">
                 <input type="text" id="username" name="username" class="form-control" />
-                <label class="form-label" for="Username">Username</label>
-              </div>
+                <label class="form-label" for="Username" id="username-label">Username</label>
+            </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
                 <input type="password" id="password" class="form-control" name="password" />
-                <label class="form-label" for="password">Password</label>
+                <label class="form-label" for="password" id="password-label">Password</label>
             </div>
 
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-info btn-block mb-4">Log In </button>
+            <button type="submit" class="btn  btn-block mb-4" id="login-btn">Log In </button>
 
             <!-- Register buttons -->
             <div class="text-center">
-                <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
-                <p>or sign up with:</p>
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-facebook-f small-icons"></i>
-                </button>
+                <p class="membership">Not a member? <a href="{% url 'register' %}">Register</a></p>
+                <p class="membership">or sign up with:</p>
+                <!-- Facebook -->
+                <a class="btn text-white" style="background-color: #3b5998;" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
 
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-google small-icons"></i>
-                </button>
+                <!-- Google -->
+                <a class="btn text-white" style="background-color: #4c75a3;" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
 
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-twitter small-icons"></i>
-                </button>
+                <!-- Twitter -->
+                <a class="btn text-white" style="background-color: #55acee;" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
 
             </div>
         </form>

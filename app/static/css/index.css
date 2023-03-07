@@ -116,11 +116,11 @@ body {
     color: #273257;
 }
 
-#login-btn {
+/* #login-btn {
     width: 100px;
     color: #fff;
     font-weight: bold;
-}
+} */
 
 #register-btn {
     width: 100px;
@@ -384,4 +384,19 @@ body {
     margin-right: 20px;
     margin-top: 20px;
 
+}
+/*login styles  */
+#username, #username-label, #password, #password-label{
+    color: #273257;
+    font-size: 2vh;
+}
+#login-btn{
+    background-color: #364082; 
+    font-weight: 900;
+    font-size: 1.7vh;
+    color: #fff;
+ } 
+.membership{
+    color: #273257;
+    font-size: 2vh;
 }
