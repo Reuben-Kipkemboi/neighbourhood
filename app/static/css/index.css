@@ -183,9 +183,9 @@ body {
         0 100px 80px rgba(0, 0, 0, 0.12);
 }
 /* post page styles */
-#post-page{
+/* #post-page{
     background-image: url('/static/images/login.jpg');
-}
+} */
 #post-btn{
     font-weight: bold;
     background-color: #87AED0;
@@ -201,4 +201,22 @@ body {
 #create-neighbourhod-btn{
     font-size: 1.8vh;
     font-weight: bold;
+}
+/* business form styling */
+#business_name{
+    font-size: 1.7vh;
+    color: #273257;;
+}
+#image, #business_email_address{
+    font-size: 1.7vh;
+    color: #273257;
+}
+#create-business-btn{
+    font-size: 1.8vh;
+    font-weight: bold;
+    background-color: #273257;
+}
+#card-business-form{
+    background: #87AED0;
+    
 }

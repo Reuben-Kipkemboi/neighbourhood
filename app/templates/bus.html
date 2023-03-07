@@ -7,20 +7,20 @@ Add Business
 {% endblock title %}
 
 {% block content %}
-<section class="vh-70">
-    <div class="container-fluid py-2 h-100" id="post-page">
+<section class="vh-100">
+    <div class="container-fluid py-2 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
-            <div class="col-md-5">
-                <form method="POST" action="" enctype="multipart/form-data">
+            <div class="col-md-5 card p-5" id="card-business-form">
+                <form method="POST" action="" enctype="multipart/form-data" id="add-business">
                     {% csrf_token %}
                     <!-- Text input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="business_name" class="form-control" name="name" />
-                        <label class="form-label" for="business_name">Business Name</label>
+                        <label class="form-label" for="business_name" id="business_name">Business Name</label>
                     </div>
 
                     <div class="mb-3 col-md-12">
-                        <label class="form-label" for="customFile">select Business Image Image</label>
+                        <label class="form-label" id="image" for="customFile">select Business Image Image</label>
                         <input type="file" class="form-control" id="image" name="image" />
 
                     </div>
@@ -28,11 +28,11 @@ Add Business
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="email" id="business_email_address" class="form-control" name="email" />
-                        <label class="form-label" for="title">Business Email Address</label>
+                        <label class="form-label" id="business_email_address" for="title">Business Email Address</label>
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Create Business</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="create-business-btn">Create Neighbourhood Business  <i class="fa-solid fa-right-to-bracket"></i></button>
                 </form>
             </div>
         </div>
