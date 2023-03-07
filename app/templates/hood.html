@@ -5,7 +5,7 @@ Add NeighbourHood--
 {% endblock title %}
 
 {% block content %}
-<section class="vh-70">
+<section class="vh-100">
     <div class="container-fluid py-2 h-100" id="post-page">
         <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-6 card p-4" id="hood-card">
@@ -13,7 +13,7 @@ Add NeighbourHood--
                     {% csrf_token %}
                     <!-- Image field -->
                     <div class="mb-3 col-md-12">
-                        <label class="form-label" for="customFile">Neighbour Hood Image</label>
+                        <label class="form-label" for="customFile"id="neighbourhood-image">Neighbour Hood Image</label>
                         <input type="file" class="form-control" id="image" name="image" />
 
                     </div>
@@ -21,41 +21,41 @@ Add NeighbourHood--
                     <!-- Hood description -->
                     <div class="form-outline mb-4">
                         <textarea class="form-control" id="describe" rows="4" name="describe"></textarea>
-                        <label class="form-label" for="form6Example7">Description</label>
+                        <label class="form-label" id="neighbourhood-desc" for="form6Example7">Description</label>
                     </div>
                     
                     <!-- Neighbour Hood input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="business_name" class="form-control" name="name"/>
-                        <label class="form-label" for="name">Neighbourhood Name</label>
+                        <label class="form-label" id="neighbourhood-name" for="name">Neighbourhood Name</label>
                     </div>
 
                     <!--  Location input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="location" class="form-control" name="location"/>
-                        <label class="form-label" for="name">Neighbourhood Location</label>
+                        <label class="form-label"id="neighbourhood-loc" for="name">Neighbourhood Location</label>
                     </div>
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="number" id="count" class="form-control" name="count" />
-                        <label class="form-label" for="title">Occupants Count</label>
+                        <label class="form-label" for="title" id="occupants-count">Occupants Count</label>
                     </div>
 
                     <!-- Health contacts Input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="contact" class="form-control" name="contact" />
-                        <label class="form-label" for="title">Health Helpline</label>
+                        <label class="form-label" id="health-helpline" for="title" >Health Helpline</label>
                     </div>
 
                     <!-- Police helpline -->
                     <div class="form-outline mb-4">
                         <input type="text" id="police" class="form-control" name="police" />
-                        <label class="form-label" for="title">Police Helpline</label>
+                        <label class="form-label"id="police-helpline" for="title">Police Helpline</label>
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Create NeighbourHood</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="create-neighbourhod-btn">Create NeighbourHood <i class="fa-sharp fa-solid fa-greater-than"></i> <i class="fa-sharp fa-solid fa-greater-than"></i> </button>
                 </form>
             </div>
         </div>

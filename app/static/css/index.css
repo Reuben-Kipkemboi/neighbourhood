@@ -192,3 +192,13 @@ body {
     color: #364082;
     /* color: #5eaf76; */
 }
+.form-control{
+    font-size: 2vh;
+}
+#police-helpline,#neighbourhood-loc, #neighbourhood-desc, #neighbourhood-image, #health-helpline, #occupants-count,#neighbourhood-name{
+    font-size: 1.7vh;
+}
+#create-neighbourhod-btn{
+    font-size: 1.8vh;
+    font-weight: bold;
+}
