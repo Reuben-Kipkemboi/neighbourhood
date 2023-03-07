@@ -55,6 +55,10 @@ Create New Business in your Neighbourhood
 
 ![create Business ](./app/static/images/api.png)
 
+Create a Post/Alert
+
+![create Post ](./app/static/images/post.png)
+
 
 ## Behaviour Driven Development
 | Behaviour | Input | Output |
