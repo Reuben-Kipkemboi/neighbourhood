@@ -289,3 +289,25 @@ body {
 .heading{
     color: #273257;
 }
+.biz-name{
+    color: #273257;
+    font-weight: bold;
+    font-size: 1.8vh;
+
+}
+.email{
+    color: #273257;
+    font-weight: bold;
+    font-size: 1.8vh;
+
+}
+.bus-name, .mail{
+    color: #273257;
+    font-size: 1.7vh;
+    padding-bottom: 2px;
+
+}
+.bus-name:hover, .mail:hover{
+    text-decoration: underline dotted #273257;
+    cursor: pointer;
+}
