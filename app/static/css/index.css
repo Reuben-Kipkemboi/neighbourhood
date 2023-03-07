@@ -3,7 +3,8 @@
 * {
     font-family: 'Chakra Petch', sans-serif;
 }
-#top-heading{
+
+#top-heading {
     font-size: 4vh;
     font-weight: bolder;
     padding-bottom: 3px;
@@ -14,15 +15,18 @@ body {
     background-color: #DFE2EC;
 
 }
-#title-card{
+
+#title-card {
     font-weight: bold;
     font-size: 2.8vh;
     color: #273257;
 }
-#description-post{
+
+#description-post {
     font-size: 1.5vh;
 }
-#contain{
+
+#contain {
     height: 450px;
     width: 100%;
     object-fit: cover;
@@ -103,8 +107,9 @@ body {
     font-weight: 900;
     font-size: 2vh;
 }
-#new-color{
-    color:#364082;
+
+#new-color {
+    color: #364082;
 }
 
 #icon {
@@ -129,46 +134,55 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    background-color:rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .login-card {
     padding: 4%;
     color: #273257;
     font-weight: bold;
-   /* margin-top: 100px; */
+    /* margin-top: 100px; */
 }
+
 #register-page {
     background-image: url('/static/images/register.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    background-color:rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
-#hood-card{
+
+#hood-card {
     font-weight: bold;
     color: #000;
     background-color: #DFE2EC;
 }
-#centering{
+
+#centering {
     font-size: 4vh;
     font-weight: bold;
-    color:#000;
+    color: #000;
     border-bottom: 1px solid #273257;
-    
+
 
 }
-#search{
+
+#search {
     font-size: 1.8vh;
     color: #364082;
     font-weight: bold;
 }
-#news-card{
-        box-shadow:
+
+#news-card {
+    box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
         0 12.5px 10px rgba(0, 0, 0, 0.06),
         0 22.3px 17.9px rgba(0, 0, 0, 0.072),
         0 41.8px 33.4px rgba(0, 0, 0, 0.086),
         0 100px 80px rgba(0, 0, 0, 0.12);
+}
+/* post page styles */
+#post-page{
+    background-image: url('/static/images/login.jpg');
 }

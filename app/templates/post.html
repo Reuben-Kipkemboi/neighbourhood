@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section class="vh-100">
+<section class="vh-100"id="post-page">
     <div class="container-fluid py-2 h-100" id="post-page">
         <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-5 card p-4 bg-light">
@@ -12,23 +12,18 @@
                         <input type="text" id="form6Example3" class="form-control" name="title" />
                         <label class="form-label" for="title">Post Title</label>
                     </div>
-
                     <div class="mb-3 col-md-12">
                         <label class="form-label" for="customFile">select Image</label>
                         <input type="file" class="form-control" id="image" name="post_image" />
 
                     </div>
-
-
-
                     <!-- Message input -->
                     <div class="form-outline mb-4">
                         <textarea class="form-control" id="form6Example7" rows="4" name="description"></textarea>
                         <label class="form-label" for="form6Example7">Post Description</label>
                     </div>
-
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Upload Post</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Create Post/Alert</button>
                 </form>
             </div>
         </div>
