@@ -4,8 +4,8 @@
   <section class="mb-5">
 
     <div class="col-md-12 card p-5 ">
-      <h4 class="mb-3 text-center">
-        <strong>Sign-up The NeighbourHood</strong>
+      <h4 class="mb-4 text-center">
+        <strong >Sign-up With The NeighbourHood</strong>
       </h4>
 
       <form action="{% url 'register' %}" method="POST">
@@ -16,29 +16,29 @@
           <div class="col">
             <div class="form-outline">
               <input type="text" id="first_name" name="first_name" class="form-control" />
-              <label class="form-label" for="form3Example1">First name</label>
+              <label class="form-label fs-4" for="form3Example1">First name</label>
             </div>
           </div>
 
           <div class="col">
             <div class="form-outline">
               <input type="text" id="last_name" name="last_name" class="form-control" />
-              <label class="form-label" for="form3Example2">Last name</label>
+              <label class="form-label fs-4" for="form3Example2">Last name</label>
             </div>
           </div>
 
           <div class="col">
             <div class="form-outline">
               <input type="text" id="username" name="username" class="form-control" />
-              <label class="form-label" for="form3Example2">Username</label>
+              <label class="form-label fs-4" for="form3Example2">Username</label>
             </div>
           </div>
         </div>
 
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" id="email" name="email" class="form-control" />
-          <label class="form-label" for="form3Example3">Email address</label>
+          <input type="email" id="email" name="email" class="form-control fs-3" />
+          <label class="form-label fs-4" for="form3Example3">Email address</label>
         </div>
 
         <div class="row mb-4 passwords">
@@ -46,7 +46,7 @@
           <div class="col">
             <div class="form-outline">
               <input type="password" id="password" name="password1" class="form-control" />
-              <label class="form-label" for="form3Example4">Password</label>
+              <label class="form-label fs-4" for="form3Example4">Password</label>
             </div>
           </div>
 
@@ -54,7 +54,7 @@
           <div class="col">
             <div class="form-outline">
               <input type="password" id="password2" name="password2" class="form-control" />
-              <label class="form-label" for="form3Example4">Verify password</label>
+              <label class="form-label fs-4" for="form3Example4">Verify password</label>
             </div>
           </div>
 
@@ -63,24 +63,27 @@
 
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-info btn-block mb-4">
-          Sign up
+        <button type="submit" class="btn btn-info btn-block mb-4" id="create-account">
+          Sign up With The Neighbourhood
         </button>
 
         <!-- Register buttons -->
         <div class="text-center">
-          <p>or sign up with:</p>
-          <button type="button" class="btn btn-primary btn-floating mx-1">
+          <p class="sign">or sign up with:</p>
+          <!-- Facebook -->
+          <a class="btn text-white" style="background-color: #3b5998;" href="#!" role="button">
             <i class="fab fa-facebook-f"></i>
-          </button>
+        </a>
 
-          <button type="button" class="btn btn-primary btn-floating mx-1">
+        <!-- Google -->
+        <a class="btn text-white" style="background-color: #4c75a3;" href="#!" role="button">
             <i class="fab fa-google"></i>
-          </button>
+        </a>
 
-          <button type="button" class="btn btn-primary btn-floating mx-1">
+        <!-- Twitter -->
+        <a class="btn text-white" style="background-color: #55acee;" href="#!" role="button">
             <i class="fab fa-twitter"></i>
-          </button>
+        </a>
         </div>
       </form>
     </div>

@@ -400,3 +400,19 @@ body {
     color: #273257;
     font-size: 2vh;
 }
+
+/* register/sign up styling */
+strong{
+    color: #273257;
+    font-size: 3vh;
+
+}
+#create-account{
+    font-size: 2vh;
+    font-weight: 900;
+}
+.sign{
+    font-size: 1.9vh;
+    color: #273257;
+    font-weight: bold;
+}
