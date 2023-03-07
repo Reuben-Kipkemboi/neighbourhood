@@ -140,7 +140,7 @@ Open the application on your browser `127.0.0.1:8000`.
 
 ## Live Site
 
-#### https://linda-jirani.herokuapp.com/
+<!-- #### https://linda-jirani.herokuapp.com/ -->
 
 
 ## Author's Info
@@ -148,5 +148,5 @@ Open the application on your browser `127.0.0.1:8000`.
  :email: [Reuben Kipkemboi](https://gmail.com)  
 
 <p align = "center">
-    &copy; 2022 @Reuben Kipkemboi.
+    &copy; 2023 @Reuben Kipkemboi.
 </p>
