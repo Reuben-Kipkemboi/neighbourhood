@@ -186,3 +186,9 @@ body {
 #post-page{
     background-image: url('/static/images/login.jpg');
 }
+#post-btn{
+    font-weight: bold;
+    background-color: #87AED0;
+    color: #364082;
+    /* color: #5eaf76; */
+}
