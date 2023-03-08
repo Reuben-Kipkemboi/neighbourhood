@@ -4,66 +4,60 @@
   <div class="row">
     <div class="col-md-12">
       <section class="my-5">
-        <div class="card">
+        <div class="card my-card">
           <div class="card-body d-flex flex-row">
             <div>
-              <h4 class="card-title mb-1" id="name-neighbourhood">Neighbourhood: {{neighbourhood.name}} </h4>
+              <h4 class="card-title mb-1" id="name-neighbourhood">Neighbourhood Name: {{neighbourhood.name}} </h4>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-text collapse" id="collapseContent">
-              {{neighbourhood.describe}}
-            </p>
-            <div class="d-flex justify-content-between">
-              <a class="btn btn-link link-info p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent"
-                role="button" aria-expanded="false" aria-controls="collapseContent" id="more">Read more</a>
-              <div id="date">
-                {{neighbourhood.date_of_creation}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="n-details">
-                <div class="row">
-                  <div class="col-sm-2"></div>
-                  <div class="col-sm-2">
-                    <div class="card card-1">
-                      <div class="card-body">
-                        <h5 class="card-title my-title">County</h5>
-                        <p class="card-text title-text"> <i class="fa-solid fa-location-dot"></i> {{neighbourhood.neighbourhood_location}}</p>
-                      </div>
+          <p class="px-4 pb-4 text-describe">{{neighbourhood.describe}}</p>
+          <div class="row">
+            <div class="n-details">
+              <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                  <div class="card card-1">
+                    <div class="card-body">
+                      <h5 class="card-title my-title">County</h5>
+                      <p class="card-text title-text"> <i class="fa-solid fa-location-dot"></i>
+                        {{neighbourhood.neighbourhood_location}}</p>
                     </div>
                   </div>
-                  <div class="col-sm-2">
-                    <div class="card card-1">
-                      <div class="card-body">
-                        <h5 class="card-title my-title">Health Helpline</h5>
-                        <p class="card-text title-text"><b><i class="fa-solid fa-phone"></i> {{neighbourhood.health_contacts}}</b></p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="card card-1">
-                      <div class="card-body">
-                        <h5 class="card-title my-title" id="my-title">Police Helpline</h5>
-                        <p class="card-text title-text"><i class="fa-solid fa-phone"></i> {{neighbourhood.police_contacts}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-2"></div>
                 </div>
+                <div class="col-sm-2">
+                  <div class="card card-1">
+                    <div class="card-body">
+                      <h5 class="card-title my-title">Health Helpline</h5>
+                      <p class="card-text title-text"><b><i class="fa-solid fa-phone"></i>
+                          {{neighbourhood.health_contacts}}</b></p>
 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="card card-1">
+                    <div class="card-body">
+                      <h5 class="card-title my-title" id="my-title">Police Helpline</h5>
+                      <p class="card-text title-text"><i class="fa-solid fa-phone"></i>
+                        {{neighbourhood.police_contacts}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <p class="mx-auto mt-3">
+                    <a href="{% url 'business' neighbourhood.id %}" class="btn business-btn-create">Create Neighbourhood
+                      Business</a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-      </section>
     </div>
-    <p class="mx-auto mt-3">
-      <a href="{% url 'business' neighbourhood.id %}" class="btn business-btn-create">Create Neighbourhood Business</a>
-    </p>
+
+    </section>
   </div>
+</div>
 </div>
 
 <div class="row">
