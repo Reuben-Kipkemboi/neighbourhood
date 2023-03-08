@@ -2,19 +2,13 @@
 {% block content%}
 <div class="container-fluid" id="body">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <section class="my-5">
         <div class="card">
           <div class="card-body d-flex flex-row">
             <div>
               <h4 class="card-title mb-1" id="name-neighbourhood">Neighbourhood: {{neighbourhood.name}} </h4>
             </div>
-          </div>
-          <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
-            <img class="img-fluid" src="{{neighbourhood.image.url}}" alt="Card image cap" id="single-image" />
-            <a href="#!">
-              <div class="mask" id="mask"></div>
-            </a>
           </div>
           <div class="card-body">
             <p class="card-text collapse" id="collapseContent">
@@ -27,116 +21,89 @@
                 {{neighbourhood.date_of_creation}}
               </div>
             </div>
+            <div class="row">
+              <div class="n-details">
+                <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-2">
+                    <div class="card card-1">
+                      <div class="card-body">
+                        <h5 class="card-title my-title">County</h5>
+                        <p class="card-text title-text"> <i class="fa-solid fa-location-dot"></i> {{neighbourhood.neighbourhood_location}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="card card-1">
+                      <div class="card-body">
+                        <h5 class="card-title my-title">Health Helpline</h5>
+                        <p class="card-text title-text"><b><i class="fa-solid fa-phone"></i> {{neighbourhood.health_contacts}}</b></p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="card card-1">
+                      <div class="card-body">
+                        <h5 class="card-title my-title" id="my-title">Police Helpline</h5>
+                        <p class="card-text title-text"><i class="fa-solid fa-phone"></i> {{neighbourhood.police_contacts}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2"></div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
 
       </section>
     </div>
-
-    <div class="col-md-4 my-5">
-      <h5 id="detaile">Neighbourhood Details</h5>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
-              data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="count-button">
-              Occupation Count
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-            data-mdb-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <h5 id="count-count">Occupants Count</h5>
-              <b class="persons-in">{{neighbourhood.occupants_count}} persons</b>
-
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
-              data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" id="count-button">
-              Health Helpline
-            </button>
-          </h2>
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-            data-mdb-parent="#accordionFlushExample">
-            <div class="accordion-body"id="count-count">
-              HealthHelp Contacts
-              <hr>
-              <p></p>
-              <b>{{neighbourhood.health_contacts}}</b>
-              <hr>
-
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
-              data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" id="count-button">
-              Police Helpline
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-            data-mdb-parent="#accordionFlushExample">
-            <div class="accordion-body"id="count-count">
-              Police Contacts
-              <hr>
-              <p>Nearest Police Station</p>
-              <b>{{neighbourhood.police_contacts}}</b>
-              <hr>
-              <p>Nearest Police Helpline</p>
-              <b>{{neighbourhood.police_contacts}}</b>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="mx-auto mt-3">
-        <a href="{% url 'business' neighbourhood.id %}" class="btn business-btn-create">Create Neighbourhood Business</a>
-      </p>
-    </div>
+    <p class="mx-auto mt-3">
+      <a href="{% url 'business' neighbourhood.id %}" class="btn business-btn-create">Create Neighbourhood Business</a>
+    </p>
   </div>
+</div>
 
-  <div class="row">
-    <h4 class="text-center heading">Featured Neighbourhood Businesses</h4>
-    {% for business in businesses %}
-    <div class="col-md-4">
-      <div class="card">
-        <img src="{{business.business_image.url}}" class="card-img-top" alt="{{business.business_name}}" />
-        <div class="card-body">
-          <p class="biz-name">Business Name</p>
+<div class="row">
+  <h4 class="text-center heading">Featured Neighbourhood Businesses</h4>
+  {% for business in businesses %}
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{{business.business_image.url}}" class="card-img-top" alt="{{business.business_name}}" />
+      <div class="card-body">
+        <p class="biz-name">Business Name</p>
 
-          <p class="card-title bus-name ">{{business.business_name}}</p>
-          <hr>
-          <p class="email">Business mail</p>
-          <p class="card-text mail">{{business.business_email_address}}</p>
-        </div>
+        <p class="card-title bus-name ">{{business.business_name}}</p>
+        <hr>
+        <p class="email">Business mail</p>
+        <p class="card-text mail">{{business.business_email_address}}</p>
       </div>
     </div>
-    {% endfor %}
-
   </div>
+  {% endfor %}
 
-  <div class="row pt-5">
-    <h4 class=" text-center heading">Featured Neighbourhood Posts, Gossips, Trends And Highlights..</h4>
-    {% for post in posts %}
-    <div class="col-md-4">
-      <div class="card">
-        <img src="{{post.post_image.url}}" class="card-img-top" alt="{{business.business_name}}" />
-        <div class="card-body">
-          <p>Highlights</p>
-          <p class="card-title">{{post.title}}</p>
-          <hr>
-          <p class="card-text">{{post.post_description}}</p>
-          <small class="float-right">{{post.posted_on}}</small>
-        </div>
+</div>
+
+<div class="row pt-5">
+  <h4 class=" text-center heading">Featured Neighbourhood Posts, Gossips, Trends And Highlights..</h4>
+  {% for post in posts %}
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{{post.post_image.url}}" class="card-img-top" alt="{{business.business_name}}" />
+      <div class="card-body">
+        <p>Highlights</p>
+        <p class="card-title">{{post.title}}</p>
+        <hr>
+        <p class="card-text">{{post.post_description}}</p>
+        <small class="float-right">{{post.posted_on}}</small>
       </div>
     </div>
-    {% endfor %}
-
   </div>
+  {% endfor %}
+
+</div>
 </div>
 
 

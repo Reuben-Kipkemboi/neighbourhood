@@ -15,10 +15,13 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="hood-name">{{hood.name}}</h5>
-                    <p class="card-text" id="hood-loc">{{hood.neighbourhood_location}}</p>
-                    <a href="/hoods/{{hood.id}}" name="single">
-                        <button class="btn btn-primary btn-lg" id="view-moore">View More</button>
-                    </a>
+                    <p class="card-text" id="hood-loc">Location: {{hood.neighbourhood_location}}</p>
+                    <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-outline-primary btn-lg fs-6" data-mdb-toggle="button" autocomplete="off">
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>   {{hood.neighbourhood_location}}
+                      </button>
+                    </div>
+                     
                     <p class="residents">{{hood.jirani.count}} Occupant{{hood.jirani.count |pluralize}}</p>
 
                     {% if request.user.profile.neighbour == hood %}
@@ -26,6 +29,11 @@
                     {% elif not request.user.profile.neighbourhood %}
                     <a href="{% url 'join' hood.id %}" class="btn btn-outline-info mt-2" id="leave-join">Join NeighbourHood</a>
                     {% endif %}
+                    <br>
+                    <hr>
+                    <a href="/hoods/{{hood.id}}" name="single">
+                        <button class="btn btn-primary btn-block" id="view-moore">View Neighbourhood More Details</button>
+                    </a>
                 </div>
 
             </div>
