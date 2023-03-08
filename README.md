@@ -44,6 +44,9 @@ Home Module
 
 ![News Highlights](./app/static/images/home.png)
 
+Our Neighbourhoods
+
+![Neighbourhoods](./app/static/images/hoods.png)
 
 
 Create a Neighbourhood
