@@ -50,7 +50,7 @@ Our Neighbourhoods
 
 Single Neighbourhood
 
-![Neighbourhoods](./app/static/images/single-hood.png)
+![Neighbourhoods](./app/static/images/singel-hood.png)
 
 
 
