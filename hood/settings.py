@@ -57,7 +57,8 @@ DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -109,15 +110,7 @@ WSGI_APPLICATION = 'hood.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dbneighbour',
-#         'USER': 'moringa',
-#         'PASSWORD': 'Access',
-#         'HOST': ''
-#     }
-# }
+
 
 
 # Password validation
