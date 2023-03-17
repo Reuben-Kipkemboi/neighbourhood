@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="title-card">{{post.title}}</h5>
-                    <p class="card-text" id="description-post">{{post.post_description}}</p>
+                    <p class="card-text" id="description-post">{{post.post_description|slice:"280"|add:"...."}}</p>
                 </div>
             </div>
         </div>
