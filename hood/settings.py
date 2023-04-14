@@ -168,3 +168,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+# csrf origins
+CSRF_TRUSTED_ORIGINS = ['https://web-production-17b93.up.railway.app']
+
