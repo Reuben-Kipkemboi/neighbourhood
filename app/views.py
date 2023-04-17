@@ -11,7 +11,7 @@ from django.views.generic import TemplateView, ListView
 
 
 # Application views.
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def home(request):
     posts= Post.objects.all()
     return render(request, 'index.html', {'posts':posts})
