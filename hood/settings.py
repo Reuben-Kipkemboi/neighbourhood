@@ -170,5 +170,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 django_heroku.settings(locals())
 
 # csrf origins
-CSRF_TRUSTED_ORIGINS = [" https://lindajirani.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://lindajirani.up.railway.app"]
 
