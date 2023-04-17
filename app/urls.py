@@ -32,7 +32,4 @@ urlpatterns = [
     path('search/', SearchResultsView.as_view(), name='search'),
     
     path('businesses/', views.all_businesses, name='all'),
-     
-     
-    
 ]
