@@ -193,9 +193,9 @@ body {
     color: #364082;
     /* color: #5eaf76; */
 }
-.form-control{
-    /* font-size: 1.7vh; */
-}
+/* .form-control{
+    font-size: 2vh;
+} */
 #police-helpline,#neighbourhood-loc, #neighbourhood-desc, #neighbourhood-image, #health-helpline, #occupants-count,#neighbourhood-name{
     font-size: 1.7vh;
 }
@@ -385,7 +385,8 @@ body {
 
 }
 /*login styles  */
-#username, #username-label, #password, #password-label{
+#username,  #password, #password-label,#username-label,#email,
+#last_name, #first_name,#password2 {
     color: #273257;
     font-size: 2vh;
 }
